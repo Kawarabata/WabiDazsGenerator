@@ -1,28 +1,23 @@
 <template>
   <div class="error-page">
-    <template v-if="error.statusCode === 404">
+    <div>
       <h1 class="title">すみません、<br />エラーのようです...</h1>
       <p>リロードするとこうなります</p>
-      <nuxt-link to="/">はじめに戻る</nuxt-link>
-    </template>
+    </div>
+    <nuxt-link to="/">はじめに戻る</nuxt-link>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['error'],
-}
+export default {}
 </script>
 
 <style>
 .error-page {
-  margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  height: 200px;
 }
 
 .title {
