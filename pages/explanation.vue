@@ -92,7 +92,7 @@ export default {
   & .button-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 24px;
+    margin-top: 60px;
   }
 }
 </style>
