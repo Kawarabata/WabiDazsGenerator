@@ -12,30 +12,31 @@
 export default {}
 </script>
 
-<style>
+<style scoped lang="postcss">
 .error-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 200px;
-}
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 40px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  & .title {
+    font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
+    display: block;
+    font-weight: 300;
+    font-size: 40px;
+    color: #35495e;
+    letter-spacing: 1px;
+  }
 
-.link {
-  display: block;
-  font-weight: 300;
-  font-size: 32px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  & .link {
+    display: block;
+    font-weight: 300;
+    font-size: 32px;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
+  }
 }
 </style>
