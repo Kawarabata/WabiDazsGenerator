@@ -1,10 +1,16 @@
 <template>
   <div class="judgement-page">
-    <div>
-      <h1 class="title">判決！</h1>
-      <h2>{{ rateAverage }}個の詫びダッツ！</h2>
+    <div class="heading">
+      <h1 class="title">判決</h1>
+      <h2>Judgement</h2>
     </div>
-    <nuxt-link to="/">はじめに戻る</nuxt-link>
+    <div class="judgement">
+      <span class="prefix">原告は被告に</span>
+      <span class="dazs">Häagen-Dazs</span>
+      <h2>{{ rateAverage }}個</h2>
+      <span class="suffix">渡してください</span>
+    </div>
+    <button-link location="/" label="仲直りしてはじめに戻る" />
   </div>
 </template>
 
@@ -27,30 +33,70 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="postcss">
 .judgement-page {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 200px;
-}
+  align-items: center;
+  height: 500px;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 40px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  & .heading {
+    margin-bottom: 60px;
 
-.link {
-  display: block;
-  font-weight: 300;
-  font-size: 32px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+    & .title {
+      display: block;
+      font-weight: bold;
+      font-size: 40px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
+
+  & .judgement {
+    width: 280px;
+
+    & span,
+    & h2 {
+      display: block;
+    }
+
+    & .dazs,
+    & h2 {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    & .prefix {
+      margin-bottom: 20px;
+    }
+
+    & .dazs {
+      margin-bottom: 16px;
+    }
+
+    & h2 {
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+
+      &::before {
+        content: url('../assets/images/decoration_left.svg');
+      }
+
+      &::after {
+        content: url('../assets/images/decoration_right.svg');
+      }
+    }
+
+    & .suffix {
+      margin-top: 20px;
+      margin-bottom: 50px;
+      text-align: right;
+    }
+  }
 }
 </style>

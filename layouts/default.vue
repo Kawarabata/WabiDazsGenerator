@@ -15,6 +15,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  padding: 24px;
+  background-color: #f4ecd0;
+  color: #220c00;
 }
 
 *,
@@ -28,6 +31,14 @@ a {
   text-decoration: none;
 }
 
+ol {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -35,6 +46,5 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 </style>

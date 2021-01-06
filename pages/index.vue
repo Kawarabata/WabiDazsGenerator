@@ -1,9 +1,20 @@
 <template>
   <div class="home">
-    <h1 class="title">詫びダッツGenerator</h1>
-    <nuxt-link to="/plaintiff" class="link" @click.native="resetState">
-      裁判へGo
-    </nuxt-link>
+    <img src="~/assets/images/logo.png" alt="詫びダッツGenerator" />
+    <p>
+      “些細なことだけど許せない”
+      <br />
+      そんなときはHäagen-Dazsで解決しましょう
+      <br />
+      怒りと反省の度合いに応じて
+      <br />
+      お詫びにふさわしい数を計算します
+    </p>
+    <button-link
+      location="/explanation"
+      label="START"
+      @click.native="resetState"
+    />
   </div>
 </template>
 
@@ -17,29 +28,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="postcss">
 .home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  height: 200px;
-}
+  height: 450px;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 40px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  & img {
+    width: 250px;
+  }
 
-.link {
-  display: block;
-  font-weight: 300;
-  font-size: 32px;
-  color: #526488;
-  word-spacing: 5px;
+  & p {
+    text-align: left;
+  }
 }
 </style>

@@ -1,16 +1,22 @@
 <template>
   <div class="plaintiff-page">
-    <div>
+    <div class="heading">
       <h1 class="title">原告</h1>
-      <h2>怒り度</h2>
-      <star-rating
-        :show-rating="false"
-        :rounded-corners="true"
-        active-color="#d7003a"
-        @rating-selected="setAngerRate"
-      />
+      <h2>plaintiff</h2>
     </div>
-    <nuxt-link v-if="angerRate" to="/defendant">被告へ</nuxt-link>
+    <p>あなたの怒り度を入力してください</p>
+    <star-rating
+      :show-rating="false"
+      active-color="#b53827"
+      class="star-rating"
+      @rating-selected="setAngerRate"
+    />
+    <button-link
+      v-if="angerRate"
+      location="/defendant"
+      label="次へ"
+      color="red"
+    />
   </div>
 </template>
 
@@ -34,30 +40,43 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="postcss">
 .plaintiff-page {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 200px;
-}
+  align-items: center;
+  height: 500px;
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 40px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+  & .heading {
+    margin-bottom: 52px;
 
-.link {
-  display: block;
-  font-weight: 300;
-  font-size: 32px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+    & .title {
+      display: block;
+      font-weight: bold;
+      font-size: 40px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    & h2 {
+      font-size: 20px;
+    }
+  }
+
+  & p {
+    margin-bottom: 48px;
+  }
+
+  & .star-rating {
+    margin-bottom: 52px;
+  }
+
+  & .link {
+    display: block;
+    font-weight: 300;
+    font-size: 32px;
+    word-spacing: 5px;
+    padding-bottom: 15px;
+  }
 }
 </style>
